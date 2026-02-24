@@ -3,6 +3,7 @@
 # 65183805
 
 import math
+from key_utils import validate_key
 
 def encrypt(plaintext: str, key: int) -> str:
     """
@@ -12,9 +13,8 @@ def encrypt(plaintext: str, key: int) -> str:
         -Write characters into columns
         -Read column-by-column to produce ciphertext
     """
-
-    if key < 2 or key > len(plaintext):
-        raise ValueError("Invalid key.")
+    # validate key
+    validate_key(key, len(plaintext))
 
     # Create empty columns
     columns = [""] * key
@@ -33,8 +33,7 @@ def decrypt(ciphertext: str, key: int) -> str:
     Decrypt ciphertext encrypted with transposition cipher.
     """
 
-    if key < 2 or key > len(ciphertext):
-        raise ValueError("Invalid key.")
+    validate_key(key, len(ciphertext))
 
     # Determine grid dimensions
     num_cols = math.ceil(len(ciphertext) / key)
