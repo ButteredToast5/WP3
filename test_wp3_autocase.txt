@@ -1,1 +1,4 @@
-
+This is a simple English test file for Workout Project 3.
+The quick brown fox jumps over the lazy dog, and this sentence
+contains many common words that a dictionary-based detector can recognize.
+We use this file to verify that the brute-force attack can recover the key.
